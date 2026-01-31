@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soft Noor</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <h1 class="app-title">Soft Noor</h1>
+    <button class="menu-btn" onclick="toggleSettings()">⋮</button>
+  </header>
+
+  <!-- Configuración -->
+  <section id="settings" class="settings hidden">
+    <h3>⚙️ Configuración</h3>
+
+    <label>🎨 Color principal</label>
+    <select onchange="changeTheme(this.value)">
+      <option value="rosa">Rosa empolvado</option>
+      <option value="lila">Lila lavanda</option>
+      <option value="verde">Verde salvia</option>
+      <option value="celeste">Celeste cielo</option>
+      <option value="crema">Crema vainilla</option>
+      <option value="plomo">Plomo claro</option>
+    </select>
+
+    <label>🌙 Modo</label>
+    <button onclick="toggleDark()">Claro / Noche</button>
+
+    <label>📖 Lectura</label>
+    <button onclick="toggleTranslation()">Mostrar / ocultar traducción</button>
+    <button onclick="showFavorites()">🤍 Favoritos</button>
+  </section>
+
+  <!-- Lista de suras -->
+  <main id="suraList" class="sura-list"></main>
+
+  <!-- Vista de sura -->
+  <section id="suraView" class="sura-view hidden">
+    <div class="sura-header">
+      <button onclick="goHome()">←</button>
+      <h2 id="suraTitle"></h2>
+    </div>
+    <div id="ayahContainer"></div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
